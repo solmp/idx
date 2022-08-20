@@ -2,15 +2,15 @@
 > Linux 命令(使用 CentOS 为例)
 
 ## mini版命令
-- 清屏：ctrl + l
-- 历史命令：history
-- 显示文件列表：ls 
+- 清屏：`ctrl + l`
+- 历史命令：`history`
+- 显示文件列表：`ls`
     - l: 显示详细文件列表
 - 创建文件夹：mkdir
 - 删除文件/文件夹：`rm -rf`
     - r: 删除文件夹
     - f: 强制删除，不提示
-- 下载文件：curl
+- 下载文件：`curl`
     - `curl -o <保存文件名> <文件链接>`
 
 ### yum
@@ -20,7 +20,7 @@
 #### 报错
 1. `Failed to download metadata for repo 'appstream': Cannot prepare internal mirrorlist: No URLs in mirrorlist`
 - Centos8将于2021年年底停止服务
-- 注释掉mirrorlist并更新镜像源，使用vault.centos.org代替mirror.centos.org
+- 注释掉mirrorlist并更新镜像源，使用`vault.centos.org`代替`mirror.centos.org`
 ~~~bash
 sed -i "s|mirrorlist=|#mirrorlist=|g" /etc/yum.repos.d/CentOS-*
 sed -i "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
@@ -123,10 +123,13 @@ make && make install
 ~~~
 
 ## 配置环境变量
+~~~bash
 echo "export PATH=$PATH:/usr/local/nginx/sbin" >> /etc/bashrc
 source /etc/bashrc
 
-验证安装：nginx -v
+# 验证安装
+nginx -v
+~~~
 
 ## 修改nginx配置
 参考：https://www.runoob.com/w3cnote/nginx-setup-intro.html
