@@ -1,2 +1,2 @@
-docsify serve
+docsify serve --open
 pause
