@@ -60,7 +60,7 @@
   - [**石墨文档**](ttps://shimo.im/)
   - [**为知笔记**](https://www.wiz.cn/)
   - [**语 雀**](https://www.yuque.com/)
-- 划水必备
+<!-- - 划水必备
   - [**0x00000001**](https://www.bilibili.com/)
   - [**0x00000002**](https://mo.fish/)
   - [**0x00000003**](http://www.mazegenerator.net/)
@@ -77,7 +77,7 @@
   - [**0x0000000e**](https://suulnnka.github.io/BullshitGenerator/index.html)
   - [**0x0000000f**](https://zzkia.noddl.me/)
   - [**0x00000010**](https://www.dgtle.com/)
-  - [**0x00000011**](https://sspai.com/)
+  - [**0x00000011**](https://sspai.com/) -->
 - 在线技术文档
   - [**Git中文教程**](https://git-scm.com/book/zh/v2)
   - [**SVN中文手册**](http://svnbook.red-bean.com/nightly/zh/index.html)
@@ -106,3 +106,11 @@
   - [**Vue.js中文文档**](https://cn.vuejs.org/v2/guide/)
   - [**React.js官方文档**](https://reactjs.org/docs/getting-started.html)
   - [**Jenkins中文文档**](https://www.jenkins.io/zh/doc/)
+- 其它
+  - [编程导航](https://www.code-nav.cn/)
+  - [面试鸭](https://www.mianshiya.com/)
+  - [编程导航知识星球](https://yupi.icu/)
+  - [r2coding](https://r2coding.com/#/) 
+  - [十年之约](https://www.foreverblog.cn/)
+- [MyBlog](https://blog.solmp.top/)
+- [GitHub](https://github.com/solmp)
