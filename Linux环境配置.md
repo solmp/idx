@@ -1,6 +1,12 @@
+# Linux环境配置
+- [linux-命令](#linux-命令)
+- [git](#git)
+- [nginx](#nginx)
+- [Python](#Python)
 
-> Linux 命令(使用 CentOS 为例)
+***
 
+# Linux 命令(以 CentOS 为例)
 ## mini版命令
 - 清屏：`ctrl + l`
 - 历史命令：`history`
@@ -320,3 +326,5 @@ pip -V
 
 2. Python 程序 Debug 时 -》ModuleNotFoundError: No module named '_ctypes'
 - `yum install -y libffi-devel`
+
+
