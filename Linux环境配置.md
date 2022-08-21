@@ -17,7 +17,14 @@
 使用: `yum install -y xxx xxx`
 - y: answer yes for all questions
 
-#### 报错
+更新yum
+~~~bash
+yum clean metadata
+yum clean all
+yum upgrade
+~~~
+
+#### 报错处理
 1. `Failed to download metadata for repo 'appstream': Cannot prepare internal mirrorlist: No URLs in mirrorlist`
 - Centos8将于2021年年底停止服务
 - 注释掉mirrorlist并更新镜像源，使用`vault.centos.org`代替`mirror.centos.org`
@@ -25,6 +32,12 @@
 sed -i "s|mirrorlist=|#mirrorlist=|g" /etc/yum.repos.d/CentOS-*
 sed -i "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
 ~~~
+
+2. 安装Python3后yum报错 -》yum SyntaxError: invalid syntax
+- yum使用的是Python2
+- `vim /usr/bin/yum`中第一行`#!/usr/bin/python`改为`#!/usr/bin/python2`
+- `vim /usr/libexec/urlgrabber-ext-down`中第一行`#!/usr/bin/python`改为`#!/usr/bin/python2`
+
 
 ### 解压缩tar文件：tar
 解压文件：`tar -zxvf xxx.tar.gz -C xxx`
@@ -67,8 +80,8 @@ sed -i "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /
 # git
 - 官网：https://git-scm.com/download/linux
 
-Ubuntu: `apt-get install git`
-CenteOS: `yum install git`
+- Ubuntu: `apt-get install git`
+- CenteOS: `yum install git`
 
 验证安装（显示版本号表示安装成功）：`git --version`
 
@@ -260,3 +273,50 @@ http {
 }
 ~~~
 
+# Python 
+选择版本：https://registry.npmmirror.com/-/binary/python/
+
+## 卸载老版本Python3
+~~~bash
+# 查找python3相关路径
+whereis python3
+# 卸载Python3
+rpm -qa|grep python3|xargs rpm -ev --allmatches --nodeps
+~~~
+
+## 下载-编译-安装 Python
+~~~bash
+wget https://registry.npmmirror.com/-/binary/python/3.8.9/Python-3.8.9.tar.xz
+# 解压
+tar -xvf Python-3.8.9.tar.xz 
+cd Python-3.8.9
+# 配置
+./configure prefix=/usr/local/python3
+# 编译并安装
+make && make install
+~~~
+
+## 配置环境
+~~~bash
+# 配置环境变量
+echo "export PATH=$PATH:/usr/local/python3/bin" >> /etc/bashrc
+source /etc/bashrc
+
+# 设置软连接
+ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+ln -s ./python3 /usr/bin/python
+ln -s ./pip3 /usr/bin/pip
+# 验证安装
+python -V
+pip -V
+~~~
+
+## 报错处理
+1. `pip install xxx` -》python setup.py egg_info did not run successfully
+- 更新pip和setuptools
+    - `pip install --upgrade setuptools`
+    - `python -m pip install --upgrade pip`
+
+2. Python 程序 Debug 时 -》ModuleNotFoundError: No module named '_ctypes'
+- `yum install -y libffi-devel`
