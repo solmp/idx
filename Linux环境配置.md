@@ -328,3 +328,15 @@ pip -V
 - `yum install -y libffi-devel`
 
 
+
+# MySQL
+## 卸载MySQL 
+- `yum remove -y mysql`
+- `find / -name mysql`
+  - 通过`rm -rf`去删除对应的文件
+
+## 安装MySQL
+- `yum localinstall mysql80-community-release-el8-1.noarch.rpm`
+- `yum update`
+- `yum install mysql-server`
+- 查看是否安装成功: `ps -ef | grep mysql`
