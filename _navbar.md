@@ -95,5 +95,5 @@
   - [**Vue.js中文文档**](https://cn.vuejs.org/v2/guide/)
   - [**React.js官方文档**](https://reactjs.org/docs/getting-started.html)
   - [**Jenkins中文文档**](https://www.jenkins.io/zh/doc/)
-- [MyBlog](https://blog.solmp.top/)
+- [MyBlog](https://blog.solmp.xyz/)
 - [GitHub](https://github.com/solmp)
